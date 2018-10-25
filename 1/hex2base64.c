@@ -1,4 +1,4 @@
-include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -63,10 +63,11 @@ int main(int argc, char* argv[]){
 
 	u_int32_t* base64 = malloc(output_len*sizeof(u_int32_t));
 	char result[output_len];
-
-	printf("input len: %d\n", input_len);
-	printf("output len: %d\n", output_len);
-	printf("chunk num: %d\n\n", input_len/6);
+	
+	printf("\n");
+	printf("Input length: %d bytes\n", input_len);
+	printf("Output length: %d bytes\n", output_len);
+	printf("Chunk number: %d\n\n", input_len/6);
 
 	printf("Chunk\tHex\t\tBinary\t\t\t\tBase64\n");
 	for(int i=0; i<output_len/4; i++){
@@ -109,5 +110,5 @@ int main(int argc, char* argv[]){
 			result[output_len-i]='=';
 	}
 	result[output_len] = '\0';
-	printf("\nResult: %s\n", result);
+	printf("\nResult: %s\n\n", result);
 }
