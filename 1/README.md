@@ -10,13 +10,16 @@ If you've written any crypto code in the past, you're going to feel like skippin
 
 Cryptopal's Rule: Always operate on raw bytes, never on encoded strings. Only use hex and base64 for pretty-printing. 
 
-- hex: 49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d
-- base64: SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t
+- hex: `49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d`
+- base64: `SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t`
 
 Compile from source:
 `gcc hex2base64.c -o hex2base64`
 
-Run:
+Help:
+`./hex2base64 [HEXSTRING]`
+
+Test:
 `./hex2base64 49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d`
 
 ## Fixed XOR
@@ -30,6 +33,12 @@ m1 xor m2: 746865206b696420646f6e277420706c6179
 Compile from source:
 `gcc xor_cipher_fixed.c -o xor_cipher_fixed`
 
-Run:
+Help:
+`./xor_cipher_fixed [MESSAGE1] [MESSAGE2]`
+
+Test:
 `./xor_cipher_fixed 1c0111001f010100061a024b53535009181c 686974207468652062756c6c277320657965`
 
+## Single-byte XOR cipher
+
+ 
