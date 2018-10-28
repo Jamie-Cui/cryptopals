@@ -34,7 +34,7 @@ gcc xor_cipher_fixed.c -o xor_cipher_fixed
 ```
 ## Single-byte XOR cipher
 
- The hex encoded string:
+The hex encoded string:
 
 - `1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736`
 
@@ -42,4 +42,55 @@ gcc xor_cipher_fixed.c -o xor_cipher_fixed
 
 You can do this by hand. But don't: write code to do it for you.
 
-How? Devise some method for "scoring" a piece of English plaintext. Character frequency is a good metric. Evaluate each output and choose the one with the best score. 
+How? Devise some method for "scoring" a piece of English plaintext. Character frequency is a good metric. Evaluate each output and choose the one with the best score 
+
+To compile from source and test:
+```
+gcc xor_cipher_single_exploit.c -o xor_cipher_single_exploit
+./xor_cipher_single_exploit -m 1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736
+```
+
+## Detect single-character XOR
+
+One of the 60-character strings in [ciphers.txt]() has been encrypted by single-character XOR.
+
+Find it.
+
+To compile from source and test:
+```
+gcc xor_cipher_single_exploit.c -o xor_cipher_single_exploit
+./xor_cipher_single_exploit -f ciphers.txt
+```
+
+## Implement repeating-key XOR
+
+Here is the opening stanza of an important work of the English language:
+```
+Burning 'em, if you ain't quick and nimble
+I go crazy when I hear a cymbal
+```
+Encrypt it, under the key "ICE", using repeating-key XOR.
+
+In repeating-key XOR, you'll sequentially apply each byte of the key; the first byte of plaintext will be XOR'd against I, the next C, the next E, then I again for the 4th byte, and so on.
+
+It should come out to: 
+
+```
+0b3637272a2b2e63622c2e69692a23693a2a3c6324202d623d63343c2a26226324272765272
+a282b2f20430a652e2c652a3124333a653e2b2027630c692b20283165286326302e27282f
+```
+Encrypt a bunch of stuff using your repeating-key XOR function. Encrypt your mail. Encrypt your password file. Your .sig file. Get a feel for it. I promise, we aren't wasting your time with this.
+
+To compile from source and test it:
+```
+gcc xor_cipher_repeating.c -o xor_cipher_repeating
+./xor_cipher_repeating "Burning 'em, if you ain't quick and nimble I go crazy when I hear a cymbal"
+```
+
+## Break repeating-key XOR
+
+This challenge isn't conceptually hard, but it involves actual error-prone coding. The other challenges in this set are there to bring you up to speed. This one is there to qualify you. If you can do this one, you're probably just fine up to Set 6.
+
+[ciphers2.txt]() here. It's been base64'd after being encrypted with repeating-key XOR.
+
+Decrypt it.  
