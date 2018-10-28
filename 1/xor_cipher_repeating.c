@@ -13,7 +13,8 @@ void main(int argc, char* argv[]){
 		printf("Illegal Argument!\n");
 		exit(-1);
 	}
-
+	
+	/* set the encryption key to "ICE"*/
 	char key[] = "ICE";
 	char* m = argv[1];
 	int m_len = strlen(m);
