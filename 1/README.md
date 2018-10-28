@@ -52,7 +52,7 @@ gcc xor_cipher_single_exploit.c -o xor_cipher_single_exploit
 
 ## Detect single-character XOR
 
-One of the 60-character strings in [ciphers.txt]() has been encrypted by single-character XOR.
+One of the 60-character strings in [ciphers.txt](https://github.com/Jamie-Cui/cryptopals/blob/master/1/ciphers.txt) has been encrypted by single-character XOR.
 
 Find it.
 
@@ -91,6 +91,6 @@ gcc xor_cipher_repeating.c -o xor_cipher_repeating
 
 This challenge isn't conceptually hard, but it involves actual error-prone coding. The other challenges in this set are there to bring you up to speed. This one is there to qualify you. If you can do this one, you're probably just fine up to Set 6.
 
-[ciphers2.txt]() here. It's been base64'd after being encrypted with repeating-key XOR.
+[ciphers2.txt](https://github.com/Jamie-Cui/cryptopals/blob/master/1/ciphers2.txt) here. It's been base64'd after being encrypted with repeating-key XOR.
 
 Decrypt it.  
