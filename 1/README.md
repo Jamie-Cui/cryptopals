@@ -105,4 +105,26 @@ Decrypt it. Here's how:
 7. Solve each block as if it was single-character XOR. You already have code to do this.
 8. For each block, the single-byte XOR key that produces the best looking histogram is the repeating-key XOR key byte for that block. Put them together and you have the key.
 
-This code is going to turn out to be surprisingly useful later on. Breaking repeating-key XOR ("Vigenere") statistically is obviously an academic exercise, a "Crypto 101" thing. But more people "know how" to break it than can actually break it, and a similar technique breaks something much more important. 
+This code is going to turn out to be surprisingly useful later on. Breaking repeating-key XOR ("Vigenere") statistically is obviously an academic exercise, a "Crypto 101" thing. But more people "know how" to break it than can actually break it, and a similar technique breaks something much more important.
+
+To compile from source and Test:
+```
+gcc xor_cipher_repeating_exploit.c -o xor_cipher_repeating_exploit
+./xor_ciper_repeating_exploit
+``` 
+
+**NOTICE: This is a incomplete answer of this challege**
+
+## AES in ECB mode
+
+The base64-encoded content [in this file]() has been encrypted vias AES-128 in ECB mode under the key `YELLOW SUBMARINE`.
+
+Decrypt it. You know the key, after all.
+
+Easiest way: use OpenSSL::Cipher and give it AES-128-ECB as the cipher.
+
+To compile from source and test (You have to have Openssl lib)
+```
+gcc aes_ecb.c -o aes_ecb -lcrypto
+./aes-ecb
+```
