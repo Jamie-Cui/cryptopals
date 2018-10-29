@@ -61,6 +61,7 @@ To compile from source and test:
 gcc xor_cipher_single_exploit.c -o xor_cipher_single_exploit
 ./xor_cipher_single_exploit -f ciphers.txt
 ```
+Known Bug: The score marking algrothim does not match English language perfectly, and returning answer may contain meaningless words sometimes would cause display error.
 
 ## Implement repeating-key XOR
 
